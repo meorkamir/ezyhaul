@@ -21,3 +21,17 @@ user input password
 
 user click login button
     click element       ${btn_login}
+
+verify user successfully login
+#    page should not contain       Incorrect username or password
+     wait until page contains       Copyright © 2021 Ezyhaul       ${TIMEOUT}
+     page should contain        Copyright © 2021 Ezyhaul
+
+# combine page action
+user login into portal
+    [Arguments]     ${username}     ${password}
+    user select login as carrier
+    user input username     ${username}
+    user input password     ${password}
+    user click login button
+    verify user successfully login
