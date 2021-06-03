@@ -11,3 +11,4 @@ Launch browser
     open browser    ${url}      ${browser}
     maximize browser window
     wait until element is visible       xpath://button[@aria-label='LOG IN']        ${TIMEOUT}
+

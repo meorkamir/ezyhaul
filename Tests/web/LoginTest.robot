@@ -1,7 +1,7 @@
 *** Setting ***
-Resource        ../Keywords/LoginKeyword.robot
-Resource        ../Keywords/MenuNavigationKeyword.robot
-Resource        ../Keywords/MyShipmentKeyword.robot
+Resource        ${EXECDIR}/Keywords/web/LoginKeyword.robot
+Resource        ${EXECDIR}/Keywords/web/MenuNavigationKeyword.robot
+Resource        ${EXECDIR}/Keywords/web/MyShipmentKeyword.robot
 
 Test setup      user launch browser     Chrome      https://demo-carrier.ezyhaul.com/login
 Test teardown       close browser

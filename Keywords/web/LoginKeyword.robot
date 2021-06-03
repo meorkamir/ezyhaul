@@ -1,6 +1,6 @@
 *** Setting ***
-Resource        Main.robot
-Variables       ../Locators/LoginPage.py
+Resource        ${EXECDIR}/Keywords/web/Main.robot
+Variables      ${EXECDIR}/Locators/web/LoginPage.py
 
 *** Keyword ***
 user launch browser

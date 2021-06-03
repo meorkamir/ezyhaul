@@ -1,6 +1,6 @@
 *** Setting ***
-Resource        Main.robot
-Variables       ../Locators/MyShipmentPage.py
+Resource        ${EXECDIR}/Keywords/web/Main.robot
+Variables       ${EXECDIR}/Locators/web/MyShipmentPage.py
 
 *** Keyword ***
 wait until My Shipment page loaded
