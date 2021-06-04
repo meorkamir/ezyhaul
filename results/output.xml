@@ -1,0 +1,489 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.0.3 (Python 3.9.2 on win32)" generated="20210603 00:56:20.526" rpa="false" schemaversion="2">
+<suite id="s1" name="Tests" source="C:\Users\Khairul Amir\Desktop\Automation\ezyhaul\tests">
+<suite id="s1-s1" name="LoginTest" source="C:\Users\Khairul Amir\Desktop\Automation\ezyhaul\tests\LoginTest.robot">
+<test id="s1-s1-t1" name="User should able to login to Ezyhaul portal">
+<kw name="user launch browser" library="LoginKeyword" type="SETUP">
+<arg>Chrome</arg>
+<arg>https://demo-carrier.ezyhaul.com/login</arg>
+<kw name="Launch browser" library="Main">
+<arg>${browser}</arg>
+<arg>${url}</arg>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210603 00:56:20.814" level="INFO">Opening browser 'Chrome' to base url 'https://demo-carrier.ezyhaul.com/login'.</msg>
+<status status="PASS" starttime="20210603 00:56:20.814" endtime="20210603 00:56:31.640"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210603 00:56:31.640" endtime="20210603 00:56:31.864"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath://button[@aria-label='LOG IN']</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210603 00:56:31.865" endtime="20210603 00:56:32.044"/>
+</kw>
+<status status="PASS" starttime="20210603 00:56:20.814" endtime="20210603 00:56:32.044"/>
+</kw>
+<status status="PASS" starttime="20210603 00:56:20.810" endtime="20210603 00:56:32.045"/>
+</kw>
+<kw name="user select login as carrier" library="LoginKeyword">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${checkbox_login_as_carrier}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210603 00:56:32.047" level="INFO">Clicking element 'xpath://div[contains(text(),'Login as Carrier')]'.</msg>
+<status status="PASS" starttime="20210603 00:56:32.046" endtime="20210603 00:56:32.170"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${btn_login}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210603 00:56:32.174" endtime="20210603 00:56:32.234"/>
+</kw>
+<status status="PASS" starttime="20210603 00:56:32.046" endtime="20210603 00:56:32.234"/>
+</kw>
+<kw name="user input username" library="LoginKeyword">
+<arg>${username}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${txt_username}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210603 00:56:32.242" level="INFO">Typing text '670167389' into text field 'xpath://input[@formcontrolname='username']'.</msg>
+<status status="PASS" starttime="20210603 00:56:32.238" endtime="20210603 00:56:32.410"/>
+</kw>
+<status status="PASS" starttime="20210603 00:56:32.234" endtime="20210603 00:56:32.410"/>
+</kw>
+<kw name="user input password" library="LoginKeyword">
+<arg>${password}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${txt_password}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210603 00:56:32.415" level="INFO">Typing text '123456' into text field 'xpath://input[@formcontrolname='password']'.</msg>
+<status status="PASS" starttime="20210603 00:56:32.414" endtime="20210603 00:56:32.543"/>
+</kw>
+<status status="PASS" starttime="20210603 00:56:32.414" endtime="20210603 00:56:32.543"/>
+</kw>
+<kw name="user click login button" library="LoginKeyword">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${btn_login}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210603 00:56:32.547" level="INFO">Clicking element 'xpath://button[@aria-label='LOG IN']'.</msg>
+<status status="PASS" starttime="20210603 00:56:32.547" endtime="20210603 00:56:32.655"/>
+</kw>
+<status status="PASS" starttime="20210603 00:56:32.543" endtime="20210603 00:56:32.655"/>
+</kw>
+<kw name="verify user successfully login" library="LoginKeyword">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Copyright © 2021 Ezyhaul</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20210603 00:56:32.659" endtime="20210603 00:56:33.206"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Copyright © 2021 Ezyhaul</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20210603 00:56:33.238" level="INFO">Current page contains text 'Copyright © 2021 Ezyhaul'.</msg>
+<status status="PASS" starttime="20210603 00:56:33.206" endtime="20210603 00:56:33.238"/>
+</kw>
+<status status="PASS" starttime="20210603 00:56:32.659" endtime="20210603 00:56:33.238"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210603 00:56:33.238" endtime="20210603 00:56:35.659"/>
+</kw>
+<tag>Test1</tag>
+<status status="PASS" starttime="20210603 00:56:20.810" endtime="20210603 00:56:35.661"/>
+</test>
+<test id="s1-s1-t2" name="User should able to view left menu navigation">
+<kw name="user launch browser" library="LoginKeyword" type="SETUP">
+<arg>Chrome</arg>
+<arg>https://demo-carrier.ezyhaul.com/login</arg>
+<kw name="Launch browser" library="Main">
+<arg>${browser}</arg>
+<arg>${url}</arg>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210603 00:56:35.669" level="INFO">Opening browser 'Chrome' to base url 'https://demo-carrier.ezyhaul.com/login'.</msg>
+<status status="PASS" starttime="20210603 00:56:35.669" endtime="20210603 00:56:43.539"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210603 00:56:43.539" endtime="20210603 00:56:43.672"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath://button[@aria-label='LOG IN']</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210603 00:56:43.673" endtime="20210603 00:56:43.991"/>
+</kw>
+<status status="PASS" starttime="20210603 00:56:35.665" endtime="20210603 00:56:43.991"/>
+</kw>
+<status status="PASS" starttime="20210603 00:56:35.665" endtime="20210603 00:56:43.991"/>
+</kw>
+<kw name="user login into portal" library="LoginKeyword">
+<arg>${username}</arg>
+<arg>${password}</arg>
+<kw name="user select login as carrier" library="LoginKeyword">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${checkbox_login_as_carrier}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210603 00:56:43.995" level="INFO">Clicking element 'xpath://div[contains(text(),'Login as Carrier')]'.</msg>
+<status status="PASS" starttime="20210603 00:56:43.995" endtime="20210603 00:56:44.085"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${btn_login}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210603 00:56:44.085" endtime="20210603 00:56:44.132"/>
+</kw>
+<status status="PASS" starttime="20210603 00:56:43.995" endtime="20210603 00:56:44.134"/>
+</kw>
+<kw name="user input username" library="LoginKeyword">
+<arg>${username}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${txt_username}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210603 00:56:44.134" level="INFO">Typing text '670167389' into text field 'xpath://input[@formcontrolname='username']'.</msg>
+<status status="PASS" starttime="20210603 00:56:44.134" endtime="20210603 00:56:44.304"/>
+</kw>
+<status status="PASS" starttime="20210603 00:56:44.134" endtime="20210603 00:56:44.304"/>
+</kw>
+<kw name="user input password" library="LoginKeyword">
+<arg>${password}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${txt_password}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210603 00:56:44.308" level="INFO">Typing text '123456' into text field 'xpath://input[@formcontrolname='password']'.</msg>
+<status status="PASS" starttime="20210603 00:56:44.304" endtime="20210603 00:56:44.437"/>
+</kw>
+<status status="PASS" starttime="20210603 00:56:44.304" endtime="20210603 00:56:44.437"/>
+</kw>
+<kw name="user click login button" library="LoginKeyword">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${btn_login}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210603 00:56:44.437" level="INFO">Clicking element 'xpath://button[@aria-label='LOG IN']'.</msg>
+<status status="PASS" starttime="20210603 00:56:44.437" endtime="20210603 00:56:44.517"/>
+</kw>
+<status status="PASS" starttime="20210603 00:56:44.437" endtime="20210603 00:56:44.521"/>
+</kw>
+<kw name="verify user successfully login" library="LoginKeyword">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Copyright © 2021 Ezyhaul</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20210603 00:56:44.521" endtime="20210603 00:56:45.341"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Copyright © 2021 Ezyhaul</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20210603 00:56:45.369" level="INFO">Current page contains text 'Copyright © 2021 Ezyhaul'.</msg>
+<status status="PASS" starttime="20210603 00:56:45.345" endtime="20210603 00:56:45.369"/>
+</kw>
+<status status="PASS" starttime="20210603 00:56:44.521" endtime="20210603 00:56:45.369"/>
+</kw>
+<status status="PASS" starttime="20210603 00:56:43.995" endtime="20210603 00:56:45.369"/>
+</kw>
+<kw name="verify all menu navigation displayed correctly" library="MenuNavigationKeyword">
+<kw name="wait until menu navigation loaded" library="MenuNavigationKeyword">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${menu_newOffer}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210603 00:56:45.369" endtime="20210603 00:56:45.912"/>
+</kw>
+<status status="PASS" starttime="20210603 00:56:45.369" endtime="20210603 00:56:45.912"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${menu_newOffer}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20210603 00:56:45.964" level="INFO">Element 'xpath://fuse-navigation//*[contains(text(),'New Offers')]' is displayed.</msg>
+<status status="PASS" starttime="20210603 00:56:45.912" endtime="20210603 00:56:45.964"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${menu_myShipment}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20210603 00:56:46.020" level="INFO">Element 'xpath://fuse-navigation//*[contains(text(),'My Shipments')]' is displayed.</msg>
+<status status="PASS" starttime="20210603 00:56:45.964" endtime="20210603 00:56:46.020"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${menu_dashboard}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20210603 00:56:46.716" level="INFO">Element 'xpath://fuse-navigation//*[contains(text(),'Dashboard')]' is displayed.</msg>
+<status status="PASS" starttime="20210603 00:56:46.020" endtime="20210603 00:56:46.716"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>1min</arg>
+<arg>3s</arg>
+<arg>run keywords</arg>
+<arg>click element</arg>
+<arg>${menu_dashboard}//following-sibling::mat-icon</arg>
+<arg>AND</arg>
+<arg>element should be visible</arg>
+<arg>${menu_mapView}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Run Keywords" library="BuiltIn">
+<arg>click element</arg>
+<arg>${menu_dashboard}//following-sibling::mat-icon</arg>
+<arg>AND</arg>
+<arg>element should be visible</arg>
+<arg>${menu_mapView}</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${menu_dashboard}//following-sibling::mat-icon</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210603 00:56:46.720" level="INFO">Clicking element 'xpath://fuse-navigation//*[contains(text(),'Dashboard')]//following-sibling::mat-icon'.</msg>
+<status status="PASS" starttime="20210603 00:56:46.720" endtime="20210603 00:56:47.926"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${menu_mapView}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210603 00:56:49.155" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-16.png"&gt;&lt;img src="selenium-screenshot-16.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210603 00:56:47.980" endtime="20210603 00:56:49.155"/>
+</kw>
+<msg timestamp="20210603 00:56:49.159" level="FAIL">The element 'xpath://fuse-navigation//*[contains(text(),'Map View')]' should be visible, but it is not.</msg>
+<status status="FAIL" starttime="20210603 00:56:47.926" endtime="20210603 00:56:49.159"/>
+</kw>
+<status status="FAIL" starttime="20210603 00:56:46.720" endtime="20210603 00:56:49.159"/>
+</kw>
+<kw name="Run Keywords" library="BuiltIn">
+<arg>click element</arg>
+<arg>${menu_dashboard}//following-sibling::mat-icon</arg>
+<arg>AND</arg>
+<arg>element should be visible</arg>
+<arg>${menu_mapView}</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${menu_dashboard}//following-sibling::mat-icon</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210603 00:56:52.163" level="INFO">Clicking element 'xpath://fuse-navigation//*[contains(text(),'Dashboard')]//following-sibling::mat-icon'.</msg>
+<status status="PASS" starttime="20210603 00:56:52.163" endtime="20210603 00:56:52.327"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${menu_mapView}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20210603 00:56:52.395" level="INFO">Element 'xpath://fuse-navigation//*[contains(text(),'Map View')]' is displayed.</msg>
+<status status="PASS" starttime="20210603 00:56:52.331" endtime="20210603 00:56:52.395"/>
+</kw>
+<status status="PASS" starttime="20210603 00:56:52.163" endtime="20210603 00:56:52.395"/>
+</kw>
+<status status="PASS" starttime="20210603 00:56:46.716" endtime="20210603 00:56:52.395"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${menu_myDispatcher}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20210603 00:56:52.487" level="INFO">Element 'xpath://fuse-navigation//*[contains(text(),'My Dispatcher')]' is displayed.</msg>
+<status status="PASS" starttime="20210603 00:56:52.395" endtime="20210603 00:56:52.487"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${menu_myDriver}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20210603 00:56:52.571" level="INFO">Element 'xpath://fuse-navigation//*[contains(text(),'My Driver')]' is displayed.</msg>
+<status status="PASS" starttime="20210603 00:56:52.487" endtime="20210603 00:56:52.571"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${menu_myTruck}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20210603 00:56:52.647" level="INFO">Element 'xpath://fuse-navigation//*[contains(text(),'My Truck')]' is displayed.</msg>
+<status status="PASS" starttime="20210603 00:56:52.571" endtime="20210603 00:56:52.651"/>
+</kw>
+<status status="PASS" starttime="20210603 00:56:45.369" endtime="20210603 00:56:52.651"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210603 00:56:52.651" endtime="20210603 00:56:55.108"/>
+</kw>
+<tag>Test2</tag>
+<status status="PASS" starttime="20210603 00:56:35.665" endtime="20210603 00:56:55.108"/>
+</test>
+<test id="s1-s1-t3" name="User should able to search by order no">
+<kw name="user launch browser" library="LoginKeyword" type="SETUP">
+<arg>Chrome</arg>
+<arg>https://demo-carrier.ezyhaul.com/login</arg>
+<kw name="Launch browser" library="Main">
+<arg>${browser}</arg>
+<arg>${url}</arg>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210603 00:56:55.121" level="INFO">Opening browser 'Chrome' to base url 'https://demo-carrier.ezyhaul.com/login'.</msg>
+<status status="PASS" starttime="20210603 00:56:55.121" endtime="20210603 00:57:03.084"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210603 00:57:03.088" endtime="20210603 00:57:03.222"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath://button[@aria-label='LOG IN']</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210603 00:57:03.223" endtime="20210603 00:57:03.606"/>
+</kw>
+<status status="PASS" starttime="20210603 00:56:55.117" endtime="20210603 00:57:03.606"/>
+</kw>
+<status status="PASS" starttime="20210603 00:56:55.117" endtime="20210603 00:57:03.606"/>
+</kw>
+<kw name="user login into portal" library="LoginKeyword">
+<arg>${username}</arg>
+<arg>${password}</arg>
+<kw name="user select login as carrier" library="LoginKeyword">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${checkbox_login_as_carrier}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210603 00:57:03.610" level="INFO">Clicking element 'xpath://div[contains(text(),'Login as Carrier')]'.</msg>
+<status status="PASS" starttime="20210603 00:57:03.610" endtime="20210603 00:57:03.690"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${btn_login}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210603 00:57:03.690" endtime="20210603 00:57:03.726"/>
+</kw>
+<status status="PASS" starttime="20210603 00:57:03.610" endtime="20210603 00:57:03.726"/>
+</kw>
+<kw name="user input username" library="LoginKeyword">
+<arg>${username}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${txt_username}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210603 00:57:03.730" level="INFO">Typing text '670167389' into text field 'xpath://input[@formcontrolname='username']'.</msg>
+<status status="PASS" starttime="20210603 00:57:03.730" endtime="20210603 00:57:04.078"/>
+</kw>
+<status status="PASS" starttime="20210603 00:57:03.726" endtime="20210603 00:57:04.078"/>
+</kw>
+<kw name="user input password" library="LoginKeyword">
+<arg>${password}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${txt_password}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210603 00:57:04.082" level="INFO">Typing text '123456' into text field 'xpath://input[@formcontrolname='password']'.</msg>
+<status status="PASS" starttime="20210603 00:57:04.078" endtime="20210603 00:57:04.318"/>
+</kw>
+<status status="PASS" starttime="20210603 00:57:04.078" endtime="20210603 00:57:04.318"/>
+</kw>
+<kw name="user click login button" library="LoginKeyword">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${btn_login}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210603 00:57:04.318" level="INFO">Clicking element 'xpath://button[@aria-label='LOG IN']'.</msg>
+<status status="PASS" starttime="20210603 00:57:04.318" endtime="20210603 00:57:04.390"/>
+</kw>
+<status status="PASS" starttime="20210603 00:57:04.318" endtime="20210603 00:57:04.390"/>
+</kw>
+<kw name="verify user successfully login" library="LoginKeyword">
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>Copyright © 2021 Ezyhaul</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20210603 00:57:04.390" endtime="20210603 00:57:05.229"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Copyright © 2021 Ezyhaul</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20210603 00:57:05.261" level="INFO">Current page contains text 'Copyright © 2021 Ezyhaul'.</msg>
+<status status="PASS" starttime="20210603 00:57:05.229" endtime="20210603 00:57:05.261"/>
+</kw>
+<status status="PASS" starttime="20210603 00:57:04.390" endtime="20210603 00:57:05.261"/>
+</kw>
+<status status="PASS" starttime="20210603 00:57:03.606" endtime="20210603 00:57:05.261"/>
+</kw>
+<kw name="User navigate to My Shipment page" library="MenuNavigationKeyword" sourcename="user navigate to ${menu} page">
+<kw name="wait until menu navigation loaded" library="MenuNavigationKeyword">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${menu_newOffer}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210603 00:57:05.261" endtime="20210603 00:57:05.642"/>
+</kw>
+<status status="PASS" starttime="20210603 00:57:05.261" endtime="20210603 00:57:05.642"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>1min</arg>
+<arg>3s</arg>
+<arg>click element</arg>
+<arg>xpath://fuse-navigation//*[contains(text(),'${menu}')]</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath://fuse-navigation//*[contains(text(),'${menu}')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210603 00:57:05.646" level="INFO">Clicking element 'xpath://fuse-navigation//*[contains(text(),'My Shipment')]'.</msg>
+<status status="PASS" starttime="20210603 00:57:05.642" endtime="20210603 00:57:05.991"/>
+</kw>
+<status status="PASS" starttime="20210603 00:57:05.642" endtime="20210603 00:57:05.992"/>
+</kw>
+<status status="PASS" starttime="20210603 00:57:05.261" endtime="20210603 00:57:05.992"/>
+</kw>
+<kw name="user search by using order no" library="MyShipmentKeyword">
+<arg>SEZUMY-210422-001910</arg>
+<kw name="wait until My Shipment page loaded" library="MyShipmentKeyword">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${btn_refresh}</arg>
+<arg>${TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210603 00:57:05.997" endtime="20210603 00:57:07.627"/>
+</kw>
+<status status="PASS" starttime="20210603 00:57:05.996" endtime="20210603 00:57:07.627"/>
+</kw>
+<kw name="search by using order no" library="MyShipmentKeyword">
+<arg>${orderNo}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${txt_transportorder}</arg>
+<arg>${orderNo}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210603 00:57:07.631" level="INFO">Typing text 'SEZUMY-210422-001910' into text field 'xpath://input[@placeholder='Transport Order#']'.</msg>
+<status status="PASS" starttime="20210603 00:57:07.631" endtime="20210603 00:57:08.297"/>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<arg>${txt_transportorder}</arg>
+<arg>RETURN</arg>
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<msg timestamp="20210603 00:57:08.301" level="INFO">Sending key(s) ('RETURN',) to xpath://input[@placeholder='Transport Order#'] element.</msg>
+<msg timestamp="20210603 00:57:08.628" level="INFO">Pressing special key RETURN to element.</msg>
+<msg timestamp="20210603 00:57:08.628" level="INFO">Releasing special key RETURN.</msg>
+<status status="PASS" starttime="20210603 00:57:08.297" endtime="20210603 00:57:08.680"/>
+</kw>
+<status status="PASS" starttime="20210603 00:57:07.627" endtime="20210603 00:57:08.680"/>
+</kw>
+<status status="PASS" starttime="20210603 00:57:05.994" endtime="20210603 00:57:08.680"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210603 00:57:08.680" endtime="20210603 00:57:11.478"/>
+</kw>
+<tag>Test3</tag>
+<status status="PASS" starttime="20210603 00:56:55.113" endtime="20210603 00:57:11.480"/>
+</test>
+<status status="PASS" starttime="20210603 00:56:20.562" endtime="20210603 00:57:11.484"/>
+</suite>
+<status status="PASS" starttime="20210603 00:56:20.530" endtime="20210603 00:57:11.492"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">Test1</stat>
+<stat pass="1" fail="0" skip="0">Test2</stat>
+<stat pass="1" fail="0" skip="0">Test3</stat>
+</tag>
+<suite>
+<stat pass="3" fail="0" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="3" fail="0" skip="0" id="s1-s1" name="LoginTest">Tests.LoginTest</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
