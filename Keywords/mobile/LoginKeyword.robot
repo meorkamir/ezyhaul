@@ -5,11 +5,16 @@ Variables      ${EXECDIR}/Locators/mobile/LoginPage.py
 *** Keyword ***
 user input username
     [Arguments]     ${username}
-    input text      ${txt_username}     ${username}
+    Wait Until Keyword Succeeds     20s      2s
+    ...     click element       ${btn_allow_permission}
+    Wait Until Keyword Succeeds     20s      2s
+    ...     input text      ${txt_username}     ${username}
 
 user input password
     [Arguments]     ${password}
-    input text      ${txt_password}     ${password}
+    Wait Until Keyword Succeeds     20s      2s
+    ...     input text      ${txt_password}     ${password}
 
 user click login button
-    click element       ${btn_login}
+    Wait Until Keyword Succeeds     20s      2s
+    ...     click element       ${btn_login}
