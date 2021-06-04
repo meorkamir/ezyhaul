@@ -1,13 +1,13 @@
 # Guideline command
-Web command:
+## Web command:
 
 robot --outputdir webtest -v username:username -v:password  test/web
 
-Mobile command:
+## Mobile command:
 
 robot --outputdir mobiletest tests/mobile
 
-Report:
+## Report:
 
 Mobiletest: for mobile
 
